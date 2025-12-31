@@ -1,18 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.livreprogramacao.monedero</groupId>
-  <artifactId>monedero</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>monedero</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--
+    Section: properties details
+    -->
+    <groupId>org.apache.kafka.monedero</groupId>
+    <artifactId>monedero</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>monedero</name>
+    <description>Monedero, is a fictional company whose core business is cryptocurrency exchange.</description>
+    <url>https://github.com/livreprogramacao/monedero</url>
+    <!--
+    Section: licenses details
+    -->
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A permissive license allowing the software to be used freely.</comments>
+        </license>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+            <comments>A simple and easy-to-understand license.</comments>
+        </license>
+    </licenses>
+    <!--
+    Section: developers details
+    -->
+    <developers>
+        <developer>
+            <id>john.doe</id>
+            <name>John Doe</name>
+            <email>john.doe@example.com</email>
+            <url>http://johndoe.com</url>
+            <organization>Example Corp</organization>
+            <organizationUrl>http://example.com</organizationUrl>
+            <roles>
+                <role>lead</role>
+                <role>developer</role>
+            </roles>
+            <timezone>UTC-5</timezone>
+        </developer>
+        <developer>
+            <id>jane.smith</id>
+            <name>Jane Smith</name>
+            <email>jane.smith@example.com</email>
+            <url>http://janesmith.com</url>
+            <organization>Tech Solutions</organization>
+            <organizationUrl>http://techsolutions.com</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>tester</role>
+            </roles>
+            <timezone>UTC+0</timezone>
+        </developer>
+    </developers>
+    <!--
+    Section: scm details
+    -->
+    <scm>
+        <connection>scm:git:git://github.com/livreprogramacao/monedero.git</connection>
+        <developerConnection>scm:git:ssh://github.com/livreprogramacao/monedero.git</developerConnection>
+        <tag>v0.0.1</tag>
+        <url>http://github.com/livreprogramacao/monedero</url>
+    </scm>
+    <!--
+    Section: properties details
+    -->
+    <properties>
+        <java.version>25</java.version>
+        <junit.version>5.7.2</junit.version>
+        <log4j.version>2.14.1</log4j.version>
+        <main.class>org.apache.kafka.monedero.App</main.class> <!-- Define your main class here -->
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <javax.persistence.api.version>2.5.4</javax.persistence.api.version>
+        <hibernate.core.version>5.4.32.Final</hibernate.core.version>
+        <h2.version>1.4.200</h2.version>
+    </properties>
+    <!--
+    Section: dependencies details
+    -->
+    <dependencies>
+        <!-- JPA Dependency -->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${javax.persistence.api.version}</version>
+        </dependency>
+        <!-- JPA Implementation (Hibernate) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.core.version}</version>
+        </dependency>
+        <!-- H2 Database Dependency -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <!--
+    Section: build
+    The <build> section is essential for defining how your project should be compiled, packaged, and tested.
+    This section enables you to configure various plugins crucial for building your application effectively.
+    Proper configuration of this section can optimize your build process and streamline development workflows.
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${main.class}</mainClass> <!-- Reference the main class property -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
