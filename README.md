@@ -1,6 +1,6 @@
 README
 
-====================
+> Monedero, is a fictional company whose core business is cryptocurrency exchange.
 
 Here's a sample Java class that demonstrates a basic business operation for user management. This example includes user registration, retrieval, and deletion operations.
 
