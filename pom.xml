@@ -66,13 +66,13 @@
         <connection>scm:git:git://github.com/livreprogramacao/monedero.git</connection>
         <developerConnection>scm:git:ssh://github.com/livreprogramacao/monedero.git</developerConnection>
         <tag>v0.0.1</tag>
-        <url>http://github.com/livreprogramacao/monedero</url>
+        <url>https://github.com/livreprogramacao/monedero</url>
     </scm>
     <!--
     Section: properties details
     -->
     <properties>
-        <h2.version>1.4.200</h2.version>
+        <h2.version>2.4.240</h2.version>
         <hibernate.core.version>5.4.32.Final</hibernate.core.version>
         <java.version>25</java.version>
         <javax.persistence.api.version>2.2</javax.persistence.api.version>
