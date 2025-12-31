@@ -1,24 +1,31 @@
 package com.github.livreprogramacao.monedero.user.output;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * User class representing a user in the system
  */
+
+@lombok.ToString
+@lombok.EqualsAndHashCode
+@lombok.AllArgsConstructor
+@lombok.NoArgsConstructor
+@Getter
+@Setter
+@javax.persistence.Entity
+@javax.persistence.Table(name = "users")
 public class User {
 
+    @javax.persistence.Id
+    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     private String id;
+
     private String name;
     private String email;
-    private com.github.livreprogramacao.monedero.business.role.CompanyRole role;
 
-    public User(String name, String email, com.github.livreprogramacao.monedero.business.role.CompanyRole role) {
-        this.name = name;
-        this.email = email;
-        this.role = role;
-    }
+    @javax.persistence.Enumerated(javax.persistence.EnumType.STRING)
+    private com.github.livreprogramacao.monedero.business.role.CompanyRole role;
 
 
 }

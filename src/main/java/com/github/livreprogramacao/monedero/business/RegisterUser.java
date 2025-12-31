@@ -2,6 +2,7 @@ package com.github.livreprogramacao.monedero.business;
 
 public class RegisterUser {
 
+    public static final String NEW = "NEW";
     private String name;
     private String email;
     private com.github.livreprogramacao.monedero.business.role.CompanyRole role;
@@ -13,7 +14,7 @@ public class RegisterUser {
     }
 
     public com.github.livreprogramacao.monedero.user.output.User register() {
-        return new com.github.livreprogramacao.monedero.user.output.User(name, email, role);
+        return new com.github.livreprogramacao.monedero.user.output.User(NEW, name, email, role);
     }
 
 }
