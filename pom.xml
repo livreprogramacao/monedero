@@ -78,14 +78,33 @@
         <main.class>org.apache.kafka.monedero.App</main.class> <!-- Define your main class here -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <javax.persistence.api.version>2.5.4</javax.persistence.api.version>
+        <javax.persistence.api.version>2.2</javax.persistence.api.version>
         <hibernate.core.version>5.4.32.Final</hibernate.core.version>
         <h2.version>1.4.200</h2.version>
+        <lombok.version>1.18.42</lombok.version>
     </properties>
     <!--
     Section: dependencies details
     -->
     <dependencies>
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version> <!-- Use the latest version -->
+        </dependency>
+        <!-- SLF4J Implementation -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.36</version> <!-- Log4j binding -->
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version> <!-- Check for the latest version -->
+            <scope>provided</scope>
+        </dependency>
         <!-- JPA Dependency -->
         <dependency>
             <groupId>javax.persistence</groupId>
