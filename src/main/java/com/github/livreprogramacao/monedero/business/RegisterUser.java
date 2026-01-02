@@ -1,5 +1,6 @@
 package com.github.livreprogramacao.monedero.business;
 
+@lombok.extern.slf4j.Slf4j
 public class RegisterUser {
 
     public static final String NEW = "NEW";
@@ -11,10 +12,13 @@ public class RegisterUser {
         this.name = name;
         this.email = email;
         this.role = role;
+        log.info("{}, {}, {}",this.name, this.email, this.role);
     }
 
     public com.github.livreprogramacao.monedero.user.output.User register() {
-        return new com.github.livreprogramacao.monedero.user.output.User(NEW, name, email, role);
+        com.github.livreprogramacao.monedero.user.output.User user = new com.github.livreprogramacao.monedero.user.output.User(NEW, name, email, role);
+        log.info("{}", user);
+        return user;
     }
 
 }

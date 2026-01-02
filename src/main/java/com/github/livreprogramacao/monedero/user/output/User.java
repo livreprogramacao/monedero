@@ -1,8 +1,5 @@
 package com.github.livreprogramacao.monedero.user.output;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * User class representing a user in the system
  */
@@ -11,8 +8,8 @@ import lombok.Setter;
 @lombok.EqualsAndHashCode
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
-@Getter
-@Setter
+@lombok.Getter
+@lombok.Setter
 @javax.persistence.Entity
 @javax.persistence.Table(name = "users")
 public class User {
@@ -26,6 +23,5 @@ public class User {
 
     @javax.persistence.Enumerated(javax.persistence.EnumType.STRING)
     private com.github.livreprogramacao.monedero.business.role.CompanyRole role;
-
 
 }

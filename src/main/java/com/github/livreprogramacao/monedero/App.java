@@ -5,13 +5,13 @@ package com.github.livreprogramacao.monedero;
  * Hello world!
  *
  */
+@lombok.extern.slf4j.Slf4j
 public class App {
 
     private final java.util.Collection<com.github.livreprogramacao.monedero.user.output.User> users = new java.util.ArrayList<>(100);
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        //log.info("Hello World!");
+        log.info("Hello World!");
 
         new App().doSomething();
     }
@@ -55,7 +55,7 @@ public class App {
 
     private static void listCompanyRoles() {
         for (com.github.livreprogramacao.monedero.business.role.CompanyRole role : com.github.livreprogramacao.monedero.business.role.CompanyRole.values()) {
-            System.out.println("Role name:\t\t\t" + role.name() + "\nDescription:\t\t" + role.getDescription() + "\n");
+            log.info("Role name:\t\t\t{}\nDescription:\t\t{}\n", role.name(), role.getDescription());
         }
     }
 }
