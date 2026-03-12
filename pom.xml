@@ -5,7 +5,7 @@
     <!--
     Section: properties details
     -->
-    <groupId>org.apache.kafka.monedero</groupId>
+    <groupId>com.github.livreprogramacao.monedero</groupId>
     <artifactId>monedero</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>monedero</name>
@@ -84,11 +84,52 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <slf4j.api.version>1.7.36</slf4j.api.version>
         <mapstruct.version>1.6.3</mapstruct.version>
+        <jakarta.version>10.0.0</jakarta.version>
+        <jakarta.ws.rs.api.version>3.1.0</jakarta.ws.rs.api.version>
     </properties>
     <!--
     Section: dependencies details
     -->
     <dependencies>
+        <!-- Jakarta web -->
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>${jakarta.ws.rs.api.version}</version>
+        </dependency>
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.1.0</version>
+    <scope>provided</scope>
+</dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+<!--
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jersey-media-servlet</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+-->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>3.1.0</version>
+        </dependency>
         <!-- Mapstruct -->
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -186,4 +227,26 @@
             </plugin>
         </plugins>
     </build>
+    <!-- 
+    Section: profiles
+    Using profiles to define properties 
+    -->
+    <profiles>
+    <profile>
+        <id>dev</id>
+        <properties>
+            <property name="database.url" value="jdbc:mysql://localhost:3306/devdb"/>
+            <property name="database.username" value="devuser"/>
+            <property name="database.password" value="devpassword"/>
+        </properties>
+    </profile>
+    <profile>
+        <id>prod</id>
+        <properties>
+            <property name="database.url" value="jdbc:mysql://prodhost:3306/proddb"/>
+            <property name="database.username" value="produser"/>
+            <property name="database.password" value="prodpassword"/>
+        </properties>
+    </profile>
+</profiles>
 </project>

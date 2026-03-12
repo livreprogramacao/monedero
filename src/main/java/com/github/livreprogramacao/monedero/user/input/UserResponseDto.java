@@ -1,5 +1,7 @@
 package com.github.livreprogramacao.monedero.user.input;
 
+@lombok.Value
+@lombok.Builder
 public class UserResponseDto {
 
     @lombok.NonNull

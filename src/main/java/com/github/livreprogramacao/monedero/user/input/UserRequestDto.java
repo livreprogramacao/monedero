@@ -1,6 +1,7 @@
 package com.github.livreprogramacao.monedero.user.input;
 
-@lombok.extern.slf4j.Slf4j
+@lombok.Data
+@lombok.Builder
 public class UserRequestDto {
 
     @lombok.NonNull
